@@ -1,3 +1,13 @@
-.clicker{
+.clicker {
     cursor: pointer;
+}
+
+.clicker__cookie {
+    height: 150px;
+    width: 200px;
+}
+
+.clicker__cookie.clicker__cookie-second_state {
+    height: 180px;
+    width: 250px;
 }

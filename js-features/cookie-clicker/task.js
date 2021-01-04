@@ -3,9 +3,6 @@ let clickerCount;
 let clickerSpeed;
 let startTime;
 let counter;
-let cookieState;
-let cookieImgMinHeight;
-let cookieImgMaxHeight;
 
 function truncated(num, digit = 3) {
     const divider = 10 ** digit;
@@ -17,14 +14,8 @@ function gameInit(params) {
     clickerCount = document.querySelector(params.clickerCount);
     clickerSpeed = document.querySelector(params.clickerSpeed);
 
-    cookieImgMinHeight = params.cookieImgMinHeight || 150;
-    cookieImgMaxHeight = params.cookieImgMaxHeight || 200;
-
-    cookieImg.width = cookieImgMinHeight;
-
     startTime = new Date();
     counter = 0;
-    cookieState = 0;
 
     cookieImg.addEventListener('click', gameClick);
 }
@@ -36,14 +27,7 @@ function gameClick() {
 
     clickerCount.textContent = counter;
     clickerSpeed.textContent = truncated(speed);
-
-    if (cookieState) {
-        cookieImg.width = cookieImgMinHeight;
-        cookieState = 0;
-    } else {
-        cookieImg.width = cookieImgMaxHeight;
-        cookieState = 1;
-    }
+    cookieImg.classList.toggle('clicker__cookie-second_state')
 }
 
 window.addEventListener('load', function () {
@@ -51,8 +35,6 @@ window.addEventListener('load', function () {
         cookieImg: '#cookie',
         clickerCount: '#clickerCount',
         clickerSpeed: '#clickerSpeed',
-        cookieImgMinHeight: 150,
-        cookieImgMaxHeight: 200,
     };
     gameInit(params);
 });
