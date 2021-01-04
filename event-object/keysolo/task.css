@@ -3,7 +3,8 @@
 }
 
 .symbol_correct {
-  color: green;
+  color: #105f78;
+  background: #a4f19f;
 }
 
 .word_incorrect {
