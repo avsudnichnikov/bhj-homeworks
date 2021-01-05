@@ -1,6 +1,5 @@
 const items = document.getElementById('items');
 const loader = document.getElementById('loader');
-
 let currencies = JSON.parse(localStorage.getItem('currencies')) || [];
 
 const decorateItem = (currency) => {

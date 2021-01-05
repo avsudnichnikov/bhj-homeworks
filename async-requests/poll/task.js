@@ -42,7 +42,7 @@ function fillStat(response) {
     })
 }
 
-let xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://netology-slow-rest.herokuapp.com/poll.php');
 xhr.send();
 xhr.onreadystatechange = function () {
