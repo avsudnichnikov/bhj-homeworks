@@ -4,12 +4,12 @@ let deadCounter;
 let lostCounter;
 
 function gameInit() {
-    deadCounterOutput = document.querySelector("#dead");
-    lostCounterOutput = document.querySelector("#lost");
+    deadCounterOutput = document.querySelector('#dead');
+    lostCounterOutput = document.querySelector('#lost');
 
     document.querySelectorAll('.hole').forEach((hole) => {
         hole.addEventListener('click', (e) => {
-            if (e.currentTarget.classList.contains("hole_has-mole")) {
+            if (e.currentTarget.classList.contains('hole_has-mole')) {
                 deadCounter += 1;
                 deadCounterOutput.textContent = deadCounter;
             } else {
@@ -35,9 +35,9 @@ function gameStart() {
 
 function gameFinish(victory = false) {
     if (victory) {
-        alert("Победа!");
+        alert('Победа!');
     } else {
-        alert("Проигрыш!");
+        alert('Проигрыш!');
     }
     gameStart();
 }
